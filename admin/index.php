@@ -38,7 +38,7 @@
                               <?php echo $row['product_name']; ?>
                               </p>
                               <div class="flex flex-wrap justify-starts items-center mt-4">
-                                   <a href="post-edit.php?post_id=<?php echo $row['post_id'] ?>" class="text-xs mr-2 py-1.5 px-4 text-gray-600 bg-pink-100 hover:bg-pink-200 rounded-2xl">
+                                   <a href="edit-product.php?product_name=<?php echo $row['product_name'] ?>" class="text-xs mr-2 py-1.5 px-4 text-gray-600 bg-pink-100 hover:bg-pink-200 rounded-2xl">
                                              Edit
                                    </a>
                                    <a href="delete-product.php?product_name=<?php echo $row['product_name'] ?>" class="text-xs mr-2 py-1.5 px-4 text-gray-600 bg-pink-100 hover:bg-pink-200 rounded-2xl">
