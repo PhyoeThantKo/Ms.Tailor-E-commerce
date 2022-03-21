@@ -28,8 +28,8 @@
                                   <a href="about.php" class="inline-block w-full py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-green-400 lg:mx-3 md:text-center">About us</a>
                               </div>
                               <div class="flex flex-col items-start justify-end w-full pt-4 md:items-center md:w-1/3 md:flex-row md:py-0">
-                                  <a href="#" class="w-full px-6 py-2 mr-0 text-gray-700 md:px-0 lg:pl-2 md:mr-4 lg:mr-5 md:w-auto">Sign In</a>
-                                  <a href="#_" class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white bg-green-400 md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-green-300 focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2 focus:ring-green-400">Sign Up</a>
+                                  <a href="login.php" class="w-full px-6 py-2 mr-0 text-gray-700 md:px-0 lg:pl-2 md:mr-4 lg:mr-5 md:w-auto">Log In</a>
+                                  <a href="register.php" class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white bg-green-400 md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-green-300 focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2 focus:ring-green-400">Sign Up</a>
                               </div>
                           </div>
                       </div>
@@ -50,7 +50,7 @@
                   <div class="mx-auto mt-5 text-gray-500 md:mt-12 md:max-w-lg md:text-center lg:text-lg">Shirt, pants, blazer or anything you want is here </div>
                   <div class="flex flex-col items-center mt-12 text-center">
                       <span class="relative inline-flex w-full md:w-auto">
-                          <a href="#_" type="button" class="inline-flex items-center justify-center w-full px-8 py-4 text-base font-bold leading-6 text-white bg-green-400 border border-transparent rounded-full md:w-auto hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400">
+                          <a href="#products" type="button" class="inline-flex items-center justify-center w-full px-8 py-4 text-base font-bold leading-6 text-white bg-green-400 border border-transparent rounded-full md:w-auto hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400">
                               Browse Products
                           </a>
                       </span>
@@ -72,17 +72,17 @@
                   </div>
                   <div class="flex flex-col items-start justify-center w-full h-full py-6 mb-6 md:mb-0 md:w-1/2">
                       <div class="flex flex-col items-start justify-center h-full space-y-3 transform md:pl-10 lg:pl-16 md:space-y-5">
-                          <div class="bg-pink-500 flex items-center pl-2 pr-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
+                          <div class="bg-green-500 flex items-center pl-2 pr-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
                               <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                               <span>Our Story</span>
                           </div>
                           <h1 class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl"><a href="#_">Premium clothes. Sweet Designs.</a></h1>
-                          <p class="pt-2 text-base font-medium"><a href="#_" class="mr-1 underline">About Us</a></p>
+                          <p class="pt-2 text-base font-medium"><a href="about.php" class="mr-1 underline hover:text-green-600">About Us</a></p>
                       </div>
                   </div>
               </div>
       
-              <div class="flex grid grid-cols-12 pb-10 sm:px-5 gap-x-8 gap-y-16">
+              <div class="flex grid grid-cols-12 pb-10 sm:px-5 gap-x-8 gap-y-16" id="products">
                     <?php include ("admin/config/config.php") ;
                     $result = mysqli_query($conn, "SELECT * FROM products ORDER BY products.created_date DESC LIMIT 6 ");
                     ?>
@@ -90,14 +90,10 @@
                          <div class="flex flex-col col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
                     <div class="max-w-lg bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 h-90 w-80">
                          <div class="">
-                         <a href="#" class="">
-                              <img class="mb-2 rounded-t-lg min-h-40 max-h-48 w-full" src="admin/covers/<?php echo $row['cover'] ?>" alt="product image">
-                         </a>
+                            <img class="mb-2 rounded-t-lg min-h-40 max-h-48 w-full" src="admin/covers/<?php echo $row['cover'] ?>" alt="product image">
                          </div>
                          <div class="px-2 py-2 h-24">
-                             <a href="#">
-                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4"><?php echo $row['product_name'] ?></h5>
-                              </a>
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4"><?php echo $row['product_name'] ?></h5>
                               <div class="flex justify-between items-center">
                                    <span class="text-2xl font-medium text-gray-900 dark:text-white"><?php echo $row['price'] ?></span>
                                    <a href="#" class="text-green-600 text-xl hover:text-green-800 font-medium rounded-lg text-center  ">Add to cart</a>
@@ -108,6 +104,13 @@
                     <?php endwhile; ?>
       
               </div>
+              <div class="flex justify-end mr-20">
+          <a href="products.php">
+            <button type="button" class="py-2 px-4  bg-green-600 hover:bg-green-700 focus:ring-green-500 focus:ring-offset-green-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full">
+                See All Products
+            </button>
+          </a>
+          </div>
           </div>
      </section>
       
