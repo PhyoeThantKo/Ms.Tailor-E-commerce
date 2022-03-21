@@ -3,8 +3,6 @@ include("admin/config/config.php");
 
 $username = $_POST['username'];
 $password = $_POST['password'];
-echo $username;
-echo $password;
 
 $sql = mysqli_query($conn,"SELECT * FROM users where user_name='$username'");
 if(mysqli_num_rows($sql)>0)
