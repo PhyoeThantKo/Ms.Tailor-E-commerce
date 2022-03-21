@@ -4,11 +4,10 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>About</title>
+     <title>Products</title>
      <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-
      <section class="w-full px-6 pb-12 antialiased bg-white">
           <div class="mx-auto max-w-7xl">
               <nav class="relative z-50 h-24 select-none" x-data="{ showMenu: false }">
@@ -22,9 +21,10 @@
                           <div class="flex-col w-full h-auto overflow-hidden bg-white rounded-lg md:bg-transparent md:overflow-visible md:rounded-none md:relative md:flex md:flex-row">
                               <a href="#_" class="inline-flex items-center block w-auto h-16 px-6 text-xl font-black leading-none text-gray-900 md:hidden">tails<span class="text-green-400">.</span></a>
                               <div class="flex flex-col items-start justify-center w-full space-x-6 text-center lg:space-x-8 md:w-2/3 md:mt-0 md:flex-row md:items-center">
-                                  <a href="#_" class="inline-block w-full py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-green-400 lg:mx-3 md:text-center">Home</a>
-                                  <a href="#_" class="inline-block w-full py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-green-400 lg:mx-3 md:text-center">Products</a>
-                                  <a href="#_" class="inline-block w-full py-2 mx-0 ml-6 font-medium text-left text-green-400 md:ml-0 md:w-auto md:px-0 md:mx-2 lg:mx-3 md:text-center">About us</a>
+                                  <a href="index.php" class="inline-block w-full py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-green-400 lg:mx-3 md:text-center">Home</a>
+                                  <a href="products.php" class="inline-block w-full py-2 mx-0 ml-6 font-medium text-left text-green-400 md:ml-0 md:w-auto md:px-0 md:mx-2 lg:mx-3 md:text-center">Products</a>
+                                  <a href="contact.php" class="inline-block w-full py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-green-400 lg:mx-3 md:text-center">Contact</a>
+                                  <a href="about.php" class="inline-block w-full py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-green-400 lg:mx-3 md:text-center">About us</a>
                               </div>
                               <div class="flex flex-col items-start justify-end w-full pt-4 md:items-center md:w-1/3 md:flex-row md:py-0">
                                   <a href="#" class="w-full px-6 py-2 mr-0 text-gray-700 md:px-0 lg:pl-2 md:mr-4 lg:mr-5 md:w-auto">Sign In</a>
@@ -44,46 +44,35 @@
               </nav>
           </div>
      </section>
-     
-     <div class="bg-lightblue py-20 px-4">
-          <div class="mx-auto max-w-6xl flex flex-col md:flex-row">
-          <h2 class="mr-8 w-full md:w-1/3 text-3xl font-extrabold leading-9">
-               About us
-          </h2>
-          <dl class="w-full md:w-2/3">
-               <dt class="mb-4">
-                    <h3 class="text-xl font-semibold">
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste excepturi
-                    </h3>
-               </dt>
-               <dd class="mb-16">
-                    <p>
-                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, ut! Aliquid placeat omnis magnam numquam sit deleniti officia molestiae? Dolore veritatis voluptatum neque nihil cum suscipit vero facere ut repellat?
-                    </p>
-               </dd>
-               <dt class="mb-4">
-                    <h3 class="text-xl font-semibold">
-                         Lorem ipsum dolor, sit amet consectetur
-                    </h3>
-               </dt>
-               <dd class="mb-16">
-                    <p>
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo impedit saepe recusandae dignissimos officiis quae minus, laudantium nostrum possimus tempora nemo sint reprehenderit temporibus dolorem reiciendis placeat expedita inventore nam!
-                    </p>
-               </dd>
-               <dt class="mb-4">
-                    <h3 class="text-xl font-semibold">
-                         Lorem ipsum dolor sit, amet
-                    </h3>
-               </dt>
-               <dd class="mb-16">
-                    <p>
-                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum eos dolore accusantium eius explicabo modi eum ullam ad obcaecati accusamus. Eaque illo fuga dolorum facere in velit quas! Unde, perspiciatis?
-                    </p>
-               </dd>
-          </dl>
+     <section class="bg-white">
+          <div class="w-full px-5 py-6 mx-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16 max-w-7xl">
+          <div class="flex grid grid-cols-12 pb-10 sm:px-5 gap-x-8 gap-y-16">
+               <?php include ("admin/config/config.php") ;
+               $result = mysqli_query($conn, "SELECT * FROM products ORDER BY products.created_date DESC");
+               ?>
+               <?php while ($row = mysqli_fetch_assoc($result)): ?>
+               <div class="flex flex-col col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
+                    <div class="max-w-lg bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 h-90 w-80">
+                         <div class="">
+                         <a href="#" class="">
+                              <img class="mb-2 rounded-t-lg min-h-40 max-h-48 w-full" src="admin/covers/<?php echo $row['cover'] ?>" alt="product image">
+                         </a>
+                         </div>
+                         <div class="px-2 py-2 h-24">
+                             <a href="#">
+                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4"><?php echo $row['product_name'] ?></h5>
+                              </a>
+                              <div class="flex justify-between items-center">
+                                   <span class="text-2xl font-medium text-gray-900 dark:text-white"><?php echo $row['price'] ?></span>
+                                   <a href="#" class="text-green-600 text-xl hover:text-green-800 font-medium rounded-lg text-center  ">Add to cart</a>
+                              </div>
+                         </div>
+                    </div>
+                  </div>
+                    <?php endwhile; ?>
+      
+              </div>
           </div>
-     </div>
- 
+     </section>
 </body>
 </html>
