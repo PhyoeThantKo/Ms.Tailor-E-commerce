@@ -82,107 +82,27 @@
               </div>
       
               <div class="flex grid grid-cols-12 pb-10 sm:px-5 gap-x-8 gap-y-16">
-                  <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
-                    <div class="max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                         <a href="#">
-                              <img class="p-8 rounded-t-lg" src="style/images/tailor.jpg" alt="product image">
+                    <?php include ("admin/config/config.php") ;
+                    $result = mysqli_query($conn, "SELECT * FROM products ORDER BY products.created_date DESC LIMIT 6 ");
+                    ?>
+                    <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                         <div class="flex flex-col col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
+                    <div class="max-w-lg bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 h-90 w-80">
+                         <div class="">
+                         <a href="#" class="">
+                              <img class="mb-2 rounded-t-lg min-h-40 max-h-48 w-full" src="admin/covers/<?php echo $row['cover'] ?>" alt="product image">
                          </a>
-                         <div class="px-5 pb-5">
-                              <a href="#">
-                                   <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
-                              </a>
+                         </div>
+                         <div class="px-2 py-2 h-24">
+
                               <div class="flex justify-between items-center">
-                                   <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-                                   <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
+                                   <span class="text-2xl font-medium text-gray-900 dark:text-white"><?php echo $row['product_name'] ?></span>
+                                   <a href="#" class="text-green-600 text-xl hover:text-green-800 font-medium rounded-lg text-center  ">Add to cart</a>
                               </div>
                          </div>
                     </div>
                   </div>
-      
-                  <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
-                    <div class="max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                         <a href="#">
-                              <img class="p-8 rounded-t-lg" src="style/images/tailor.jpg" alt="product image">
-                         </a>
-                         <div class="px-5 pb-5">
-                              <a href="#">
-                                   <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
-                              </a>
-                              <div class="flex justify-between items-center">
-                                   <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-                                   <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
-                              </div>
-                         </div>
-                    </div>
-                  </div>
-      
-                  <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
-                    <div class="max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                         <a href="#">
-                              <img class="p-8 rounded-t-lg" src="style/images/tailor.jpg" alt="product image">
-                         </a>
-                         <div class="px-5 pb-5">
-                              <a href="#">
-                                   <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
-                              </a>
-                              <div class="flex justify-between items-center">
-                                   <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-                                   <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
-                              </div>
-                         </div>
-                    </div>
-                  </div>
-      
-                  <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
-                    <div class="max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                         <a href="#">
-                              <img class="p-8 rounded-t-lg" src="style/images/tailor.jpg" alt="product image">
-                         </a>
-                         <div class="px-5 pb-5">
-                              <a href="#">
-                                   <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
-                              </a>
-                              <div class="flex justify-between items-center">
-                                   <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-                                   <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
-                              </div>
-                         </div>
-                    </div>
-                  </div>
-      
-                  <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
-                    <div class="max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                         <a href="#">
-                              <img class="p-8 rounded-t-lg" src="style/images/tailor.jpg" alt="product image">
-                         </a>
-                         <div class="px-5 pb-5">
-                              <a href="#">
-                                   <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
-                              </a>
-                              <div class="flex justify-between items-center">
-                                   <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-                                   <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
-                              </div>
-                         </div>
-                    </div>
-                  </div>
-      
-                  <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
-                    <div class="max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                         <a href="#">
-                              <img class="p-8 rounded-t-lg" src="style/images/tailor.jpg" alt="product image">
-                         </a>
-                         <div class="px-5 pb-5">
-                              <a href="#">
-                                   <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
-                              </a>
-                              <div class="flex justify-between items-center">
-                                   <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-                                   <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
-                              </div>
-                         </div>
-                    </div>
-                  </div>
+                    <?php endwhile; ?>
       
               </div>
           </div>
