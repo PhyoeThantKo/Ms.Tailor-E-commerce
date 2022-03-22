@@ -1,5 +1,20 @@
 <?php
-unset($_SESSION['cart']);
+     session_start();
+     include('admin/config/config.php');
+
+     $name = $_POST['name'];
+     $email = $_POST['email'];
+     $address = $_POST['address'];
+
+     mysqli_query($conn, "INSERT INTO orders (name, email, address) VALUES ('$name', '$email','$address') ");
+
+     $order_id = mysqli_insert_id($conn);
+
+     foreach($_SESSION['cart'] as $id => $qty) {
+          mysqli_query($conn, "INSERT INTO order_items (product_id, order_id, qty) VALUES ('$id','$order_id','$qty')");
+     }
+
+     unset($_SESSION['cart']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
