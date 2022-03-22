@@ -10,8 +10,9 @@
 
      if(is_array($row))
     {
+        $_SESSION["auth"] = true;
         $_SESSION["id"] = $row['id'];
-        $_SESSION["username"]=$row['username'];
+        $_SESSION["username"]=$row['user_name'];
         header("Location: index.php"); 
     }
     else
