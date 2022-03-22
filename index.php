@@ -1,4 +1,13 @@
-<?php session_start(); ?>
+<?php session_start(); 
+
+$cart = 0;
+if(isset($_SESSION['cart'])){
+     foreach($_SESSION['cart'] as $qty ){
+          $cart += $qty;
+     }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -105,7 +114,7 @@
                             <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4"><?php echo $row['product_name'] ?></h5>
                               <div class="flex justify-between items-center">
                                    <span class="text-2xl font-medium text-gray-900 dark:text-white"><?php echo $row['price'] ?></span>
-                                   <a href="#" class="text-green-600 text-xl hover:text-green-800 font-medium rounded-lg text-center  ">Add to cart</a>
+                                   <a href="add-to-cart.php?id=<?php echo $row['id'] ?>" class="text-green-600 text-xl hover:text-green-800 font-medium rounded-lg text-center  ">Add to cart</a>
                               </div>
                          </div>
                     </div>
