@@ -27,7 +27,7 @@
 <body>
 <h1>Order Submitted</h1>
      <div class="msg">
-          Your order has been submitted. We'll deliver the items soon. <a href="index.php" class="done">Book Store Home</a>
+          Your order has been submitted. We'll deliver the items soon. <a href="index.php" class="done">Return To Homepage</a>
      </div>
 </body>
 </html>
