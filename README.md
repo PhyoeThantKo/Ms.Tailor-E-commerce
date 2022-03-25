@@ -19,7 +19,7 @@ Customers will be able to make account registeration, log in, browse , add to ca
 
 ## Screenshots
 
-![App Screenshot](style/images/tailor.jpg)
+![App Screenshot](style/images/tailor overview.png)
 
 
 ## Tech Stack
