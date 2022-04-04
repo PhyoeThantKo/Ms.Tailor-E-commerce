@@ -22,10 +22,27 @@
         </div>
 </nav>
 
+<div class="font-semibold text-3xl flex justify-center items-center mt-8">
+    <div>Here are the registered users.</div>
+</div>
 
-<div class="container flex flex-col mx-auto w-full items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow">
+<div class="container flex flex-col mx-auto w-full items-center justify-center bg-white dark:bg-gray-800 rounded-lg  mt-8">
 
     <ul class="flex flex-col divide divide-y">
+
+    <li class="flex flex-row">
+            <div class="select-none cursor-pointer flex flex-1 items-center p-4">
+                <div class="font-medium flex-1 pl-1 mr-16">
+                    User Names
+                </div>
+                <div class="flex-1 pl-1 mr-16">
+                    <div class="font-medium dark:text-white">
+                        Emails
+                    </div>
+                </div>
+            </div>
+        </li>
+
     <?php include('config/config.php');
 $users = mysqli_query($conn, "SELECT * FROM users");
 
@@ -36,6 +53,11 @@ while($user = mysqli_fetch_assoc($users)):
                 <div class="flex-1 pl-1 mr-16">
                     <div class="font-medium dark:text-white">
                         <?php echo $user['user_name'] ?>
+                    </div>
+                </div>
+                <div class="flex-1 pl-1 mr-16">
+                    <div class="font-medium dark:text-white">
+                        <?php echo $user['email'] ?>
                     </div>
                 </div>
             </div>
